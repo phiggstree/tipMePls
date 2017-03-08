@@ -15,29 +15,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
 
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
       
-
     }
     override func viewWillAppear(_ animated: Bool) {
         //To retrieve key
         let defaults = UserDefaults.standard
         let intValue = defaults.integer(forKey: "setTip")
         tipControl.selectedSegmentIndex = intValue
-        print(intValue)
+        //debug test ---> print(intValue)
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    
-    
     // Function disables soft keyboard 
     @IBAction func onTap(_ sender: Any) {
         view.endEditing(true)
@@ -52,7 +47,7 @@ class ViewController: UIViewController {
         tipLabel.text = String(format:"$%.2f", tip)
         totalLabel.text = String(format:"$%.2f", total)
         
-        print("calculateTipAmount")
+        //debug test --> print("calculateTipAmount")
     }
     
 
