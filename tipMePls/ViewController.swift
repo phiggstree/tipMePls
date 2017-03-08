@@ -20,15 +20,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
+      
 
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        //To retrieve key
+        let defaults = UserDefaults.standard
+        let intValue = defaults.integer(forKey: "setTip")
+        tipControl.selectedSegmentIndex = intValue
+        print(intValue)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    // lifecycle 
 
-    
     
     
     // Function disables soft keyboard 
